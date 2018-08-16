@@ -6,6 +6,7 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.1'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
+gem 'devise'
 gem 'simple_form', '~> 4.0'
 gem 'jquery-rails'
 gem 'bootstrap'
@@ -38,6 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
+  gem "factory_bot_rails", "~> 4.0"
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 

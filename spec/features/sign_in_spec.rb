@@ -1,4 +1,5 @@
 describe "the signin process", type: :feature do
+  let!(:user) { create(:user) }
   it "shows main page with login form " do
     visit root_path
     expect(page).to have_content 'Welcome, guest!'
