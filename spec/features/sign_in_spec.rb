@@ -6,4 +6,14 @@ describe "the signin process", type: :feature do
     expect(page).to have_button 'Sign in'
     expect(page).to have_link 'Sign up'
   end
+
+  it "signs user in" do
+    visit root_path
+
+    fill_in 'Email', with: 'user@example.com'
+    fill_in 'Password', with: 'password'
+
+    click_button 'Sign in'
+    expect(page).to have_content 'Profile'
+  end
 end
