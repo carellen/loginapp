@@ -1,0 +1,16 @@
+.row.justify-content-center
+  .col-4.align-self-center
+    .card.text-center{:width => "620"}
+      = simple_form_for(:user, url: session_path(:user), html: { width: "500"}) do |f|
+        %h1 Welcome, guest!
+        = image_tag('welcome-350167_1280.png', size: "250x100")
+        %h1.h3.mb-3.font-weight-normal Please, login
+        = f.input :email, label: false, placeholder: 'Email', class: 'form-control'
+        = f.input :password, label: false, placeholder: 'Password', class: 'form-control'
+        = f.input :remember_me, as: :boolean
+        = f.submit 'Sign in', class: 'btn btn-lg btn-primary btn-block'
+        = link_to "Forgot your password?", new_password_path(:user)
+        %h6
+          Not registered yet?
+          = link_to 'Sign up', new_user_registration_path
+        %p.mt-5.mb-3.text-muted © 2017-2018
