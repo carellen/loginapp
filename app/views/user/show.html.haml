@@ -1,1 +1,17 @@
 %h1 User's Profile
+
+.card.text-center
+  .card-header
+    Email: #{@user.email}
+  .card-body
+    %h5.card-title Firstname
+    %p.card-text
+      = @user.firstname
+    %h5.card-title Lastname
+    %p.card-text
+      = @user.lastname
+    %h5.card-title Date of Birth
+    %p.card-text
+      = @user.birthdate
+  .card-footer.text-muted
+    = link_to 'Logout', destroy_user_session_path, method: :delete
