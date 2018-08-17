@@ -17,4 +17,14 @@ describe "the signin process", type: :feature do
     click_button 'Sign in'
     expect(page).to have_content 'Profile'
   end
+
+  it "reject sign in for unregistered user" do
+    visit root_path
+
+    fill_in 'Email', with: 'fake@example.com'
+    fill_in 'Password', with: 'fakepassword'
+
+    click_button 'Sign in'
+    expect(page).to have_current_path(root_path)
+  end
 end
